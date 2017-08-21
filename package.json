@@ -9,6 +9,7 @@
   "author": "Mohd Ashif Ali <ali.mashifali.ashif14@gmail.com> (https://github.com/ashif14)",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.7"
   }

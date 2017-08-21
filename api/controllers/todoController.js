@@ -17,16 +17,14 @@ exports.listAllTasks = function(req, res) {
 
 
 exports.createTask = function(req, res) {
-	res.set('Access-Control-Allow-Origin' , 'http://localhost:3001');
-	res.set('Access-Control-Allow-Methods', 'POST');
-	res.set('Content-Type', 'application/json');
+	res.set('Access-Control-Allow-Origin' , '*');
 	var newTask = new task(req.body);
-	console.log(req.body);
-	// newTask.save(function(err, task) {
-	// 	if(err)
-	// 		res.send(err);
-		res.json(req.body);
-	// });
+	// console.log(req.body);
+	newTask.save(function(err, task) {
+		if(err)
+			res.send(err);
+		res.json(task);
+	});
 };
 
 exports.readTask = function(req, res) {
